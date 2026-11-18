@@ -20,9 +20,9 @@ include 'includes/config.php';
             </a>
             <nav>
                 <ul>
-                    <li><a href="/index.php">Hem</a></li>
-                    <li><a href="/ai.php">AI</a></li>
-                    <li><a href="/bucketlist.php">Bucketlist</a></li>
+                    <li><a href="index.php">Hem</a></li>
+                    <li><a href="ai.php">AI</a></li>
+                    <li><a href="bucketlist.php">Bucketlist</a></li>
                 </ul>
             </nav>
         </div>
