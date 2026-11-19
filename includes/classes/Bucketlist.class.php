@@ -18,7 +18,7 @@ class Bucketlist {
         }
     }
 
-    // Returnerar bucketlist
+    // Returnerar hela bucketlist
     public function getItems() : array {
         $sql = "SELECT * FROM items;";
         $result = mysqli_query($this->db, $sql);
@@ -26,8 +26,8 @@ class Bucketlist {
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    // Lägga till ny bucket!
-    public function addItems(string $name, string $description, string $priority) : bool {
+    // Lägga till nytt item i bucketlist!
+    public function addItems(string $name, string $description, int $priority) : bool {
         if(!$this->setName($name)) return false;
         if(!$this->setDescription($description)) return false;
         if(!$this->setPriority($priority)) return false;
@@ -37,6 +37,14 @@ class Bucketlist {
         $result = mysqli_query($this->db, $sql);
 
         return $result;
+    }
+
+    // Radera ett item från bucketlist
+    public function deleteItem(int $id) : bool {
+        $sql = "DELETE FROM items WHERE id = $id;";
+
+        return mysqli_query($this->db, $sql);
+        
     }
 
     // GET och SET metoder
@@ -58,13 +66,13 @@ class Bucketlist {
             return false;
         }
     }
-    public function setPriority(string $priority) : bool {
+    public function setPriority(int $priority) : bool {
         // Kontrollera längd
-        if($priority != "") {
+        if($priority < 1 || $priority > 5) {
+            return false;
+        } else {
             $this->priority = $this->db->real_escape_string($priority);
             return true;
-        } else {
-            return false;
         }
     }
 
@@ -74,7 +82,7 @@ class Bucketlist {
     public function getDescription() : string {
         return $this->description;
     }
-    public function getPriority() : string {
+    public function getPriority() : int {
         return $this->priority;
     }
 }
