@@ -28,7 +28,15 @@ class Bucketlist {
 
     // Lägga till ny bucket!
     public function addItems(string $name, string $description, string $priority) : bool {
+        if(!$this->setName($name)) return false;
+        if(!$this->setDescription($description)) return false;
+        if(!$this->setPriority($priority)) return false;
 
+        $sql = "INSERT INTO items(name, description, priority)VALUES('$this->name', '$this->description', '$this->priority');";
+
+        $result = mysqli_query($this->db, $sql);
+
+        return $result;
     }
 
     // GET och SET metoder
