@@ -61,9 +61,9 @@ if (isset($_POST['name'])) {
         </form>
 </section>
 
-// Hämtar items från databasen
 <div id="bucket-items-section">
     <?php
+    // Hämtar items från databasen
     $items = $bucketlist->getItems();
 
     foreach ($items as $item) {
@@ -78,7 +78,7 @@ if (isset($_POST['name'])) {
                 <input type="hidden" name="delete_id">
                 <button type="submit">Radera</button>
             </form>
-            <span class="date">2026-11-15</span>
+            <span class="date">Tillagd: <?= $item['created_at'] ?></span>
         </div>
     <?php
     }

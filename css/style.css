@@ -146,12 +146,21 @@ section h2 {
 #bucket-items-section .item .date {
     font-style: italic;
     font-size: 10px;
+    color:#64748b;
 }
 
-#bucket-items-section .item p,
+#bucket-items-section .item p {
+    flex: 0 0 100%;
+    margin: 0 0 2rem 0;
+}
+
 #bucket-items-section .item form {
     flex: 0 0 100%;
     margin: 0;
+}
+
+#bucket-items-section .item form button {
+    width: 100%;
 }
 
 /* Footer */
