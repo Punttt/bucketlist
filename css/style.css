@@ -96,6 +96,64 @@ section h2 {
     color: #0f172a;
 }
 
+/* Bucketlistkort */
+#bucket-items-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+}
+
+#bucket-items-section .item {
+    display: flex;
+    min-width: 300px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px 16px;
+    flex: 1 1 280px;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#bucket-items-section .badge {
+    flex: 0 0 56px;
+}
+
+#bucket-items-section .badge span {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#bucket-items-section .item h3 {
+    flex: 1 1 calc(100% - 72px);
+    align-self: center;
+    margin: 0;
+    color: #0f172a;
+}
+#bucket-items-section .item .date {
+    font-style: italic;
+    font-size: 10px;
+}
+
+#bucket-items-section .item p,
+#bucket-items-section .item form {
+    flex: 0 0 100%;
+    margin: 0;
+}
+
 /* Footer */
 footer {
     border-top: 1px solid #e2e8f0;
@@ -237,6 +295,9 @@ td a {
 
 /* Mobilanpassning */
 @media (max-width: 600px) {
+    #bucket-items-section {
+        grid-template-columns: 1fr;
+    }
     .container {
         padding: 16px;
     }
