@@ -12,6 +12,11 @@ $name = "";
 $description = "";
 $priority = "";
 
+// -- Ta bort item --
+if (isset($_POST['delete_id'])){
+    $bucketlist->deleteItem($_POST['delete_id']);
+}
+
 // -- Lägg till item --
 if (isset($_POST['name'])) {
     $name = $_POST['name'];
@@ -75,7 +80,7 @@ if (isset($_POST['name'])) {
             <h3><?= $item['name'] ?></h3>
             <p><?= $item['description'] ?></p>
             <form method="post" action="bucketlist.php">
-                <input type="hidden" name="delete_id">
+                <input type="hidden" name="delete_id" value="<?= $item['id'] ?>">
                 <button type="submit">Radera</button>
             </form>
             <span class="date">Tillagd: <?= $item['created_at'] ?></span>
