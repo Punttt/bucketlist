@@ -88,6 +88,23 @@ main .container {
     padding-bottom: 48px;
 }
 
+/* hero index */
+#hero-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    min-height: 450px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("../img/bg-wallpaper.webp") center / cover no-repeat;
+}
+
+#hero-index h1 {
+    margin-bottom: 1rem;
+}
+
 /* Sektioner */
 section {
     padding: 28px;
@@ -224,16 +241,21 @@ textarea {
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-button:focus-visible {
+button:focus-visible,
+.btn:focus-visible {
     outline: 3px solid #bfdbfe;
     outline-offset: 2px;
     border-color: #2563eb;
 }
 
 button,
+.btn,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: fit-content;
     padding: 10px 18px;
     border: 0;
@@ -242,14 +264,17 @@ input[type="reset"] {
     color: #fff;
     font: inherit;
     font-weight: 500;
+    text-decoration: none;
     cursor: pointer;
 }
 
 button:hover,
+.btn:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover {
     background-color: #1d4ed8;
+    color: #fff;
 }
 
 button:disabled,
