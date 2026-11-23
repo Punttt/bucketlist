@@ -12,6 +12,7 @@ body {
     color: #1e293b;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
 }
@@ -24,6 +25,14 @@ a {
 
 a:hover {
     color: #1d4ed8;
+}
+
+/* Styling för code */
+code {
+    font-size: 0.9em;
+    background: #eef2ff;
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
 }
 
 /* Gemensam innehållsbredd */
@@ -89,6 +98,11 @@ section {
 
 section + section {
     margin: 24px 0 0 0;
+}
+
+section .ingress {
+    font-size: 20px;
+    font-weight: semi-bold;
 }
 
 section h2 {
