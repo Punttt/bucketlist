@@ -20,7 +20,7 @@ class Bucketlist {
 
     // Returnerar hela bucketlist
     public function getItems() : array {
-        $sql = "SELECT * FROM items;";
+        $sql = "SELECT * FROM items ORDER BY priority ASC;";
         $result = mysqli_query($this->db, $sql);
 
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
