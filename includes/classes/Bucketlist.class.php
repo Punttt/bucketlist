@@ -41,6 +41,8 @@ class Bucketlist {
 
     // Radera ett item från bucketlist
     public function deleteItem(int $id) : bool {
+        if($id < 1) return false;
+
         $sql = "DELETE FROM items WHERE id = $id;";
 
         return mysqli_query($this->db, $sql);
