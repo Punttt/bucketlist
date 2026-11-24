@@ -45,7 +45,7 @@ if (isset($_POST['name'])) {
 ?>
 <section>
     <h1>Min bucketlist</h1>
-    <p>Här samlar jag mål och drömmar som jag vill uppnå under min livstid. Lägg till nya mål med formuläret, ge dem en prioritet från 1 (viktigast) till 5, och radera dem när de är avklarade.</p>
+    <p class="ingress">Här samlar jag mål och drömmar som jag vill uppnå under min livstid. Lägg till nya mål med formuläret, ge dem en prioritet från 1 (viktigast) till 5, och radera dem när de är avklarade.</p>
 </section>
 
 <section id="bucket-form-section">
