@@ -45,7 +45,7 @@ if (isset($_POST['name'])) {
 ?>
 
 <section id="bucket-form-section">
-    <h2>Bucketlist</h1>
+    <h1>Bucketlist</h1>
         <p>Lägg till och ta bort aktiviteter från din bucketlist! Du kan även sortera dem i prioritet.</p>
         <form method="post" action="bucketlist.php">
             <?php

@@ -3,7 +3,7 @@ include 'includes/config.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@ include 'includes/config.php';
     <header id="main-header">
         <div class="container">
             <a href="index.php">
-                <h1>Bucketlist</h1>
+                <span class="logotype">Bucketlist</span>
             </a>
             <nav>
                 <ul>
