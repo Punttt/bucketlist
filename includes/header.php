@@ -15,7 +15,7 @@ include 'includes/config.php';
 <body>
     <header id="main-header">
         <div class="container">
-            <a href="/index.php">
+            <a href="index.php">
                 <h1>Bucketlist</h1>
             </a>
             <nav>

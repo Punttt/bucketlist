@@ -30,17 +30,23 @@ if (isset($_POST['name'])) {
     if (!$bucketlist->setDescription($description)) {
         $errors['description'] = "Du måste fylla i en beskrivning.";
     }
+    if(!$bucketlist->setPriority($priority)) {
+        $errors['priority'] = "Du måste välja en prioritet.";
+    }
 
     // Om ingen error sker
     if (empty($errors)) {
         $bucketlist->addItems($name, $description, $priority);
+        header("Location: bucketlist.php");
+
+        exit;
     }
 }
 ?>
 
 <section id="bucket-form-section">
     <h2>Bucketlist</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores deserunt ut nemo a nam aliquam laboriosam quisquam saepe est adipisci accusamus quis omnis id ad provident placeat, maiores cum dolorem!</p>
+        <p>Lägg till och ta bort aktiviteter från din bucketlist! Du kan även sortera dem i prioritet.</p>
         <form method="post" action="bucketlist.php">
             <?php
             if (isset($errors['name'])) {
@@ -49,11 +55,15 @@ if (isset($_POST['name'])) {
             if (isset($errors['description'])) {
                 echo "<p class='warning'>" . $errors['description'] . "</p>";
             }
+            if (isset($errors['priority'])) {
+                echo "<p class='warning'>" . $errors['priority'] . "</p>";
+            }
             ?>
             <label for="name">Namn: </label>
             <input type="text" id="name" name="name">
             <label for="priority">Prioritet: </label>
             <select name="priority" id="priority">
+                <option value="0">Välj prioritet</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

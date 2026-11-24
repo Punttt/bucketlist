@@ -94,6 +94,7 @@ main .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0;
     color: #fff;
     min-height: 450px;
     background:
@@ -102,8 +103,14 @@ main .container {
 }
 
 #hero-index h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
+
+#hero-index p {
+    margin-bottom: 2rem;
+}
+
 
 /* Sektioner */
 section {
