@@ -16,6 +16,9 @@ class Bucketlist {
         if ($this->db->connect_error) {
             die("Connection failed: " . $this->db->connect_error);
         }
+
+        // Teckenkodning för å, ä och ö
+        $this->db->set_charset("utf8mb4");
     }
 
     // Returnerar hela bucketlist
